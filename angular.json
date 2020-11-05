@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tutorials"
+    }
+  },
+  "defaultProject": "tutorials",
+  "cli": {
+    "analytics": "4ecbf42a-6320-47ff-addf-3110156698d7"
+  }
 }
