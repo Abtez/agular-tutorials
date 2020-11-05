@@ -9,6 +9,7 @@ import { AddTutorialComponent } from './add-tutorial/add-tutorial.component';
 import { TutorialDetailsComponent } from './tutorial-details/tutorial-details.component';
 import { TutorialListComponent } from './tutorial-list/tutorial-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TutorialsComponent } from './tutorials/tutorials.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddTutorialComponent,
     TutorialDetailsComponent,
     TutorialListComponent,
-    NavbarComponent
+    NavbarComponent,
+    TutorialsComponent
   ],
   imports: [
     FormsModule,
