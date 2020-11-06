@@ -1,1 +1,45 @@
-<p>add-tutorial works!</p>
+<div class="container text-center">
+    <h2>Add tutorial</h2>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="submit-form">
+                <div *ngIf="!submitted">
+                  <div class="form-group">
+                    <input placeholder="Title" type="text" class="form-control" id="title" required [(ngModel)]="tutorial.title"name="title"/>
+                  </div>
+              
+                  <div class="form-group">
+                    <input placeholder="Description"
+                      class="form-control"
+                      id="description"
+                      required
+                      [(ngModel)]="tutorial.description"
+                      name="description"
+                    />
+            
+                    <input type="file" placeholder="Choose Display Image" class="form-control mt-3" id="image" required [(ngModel)]="tutorial.image" name="image">
+            
+                    <textarea class="form-control mt-5" placeholder="Content" name="content" id="content" [(ngModel)]="tutorial.content" cols="30" rows="10"></textarea>
+
+                 <input placeholder="Author" class="form-control mt-4" type="text" id="author" name="author" [(ngModel)]="tutorial.author" required>
+
+            
+                 <input class="form-control mt-4" placeholder="Date" type="date" name="created_on" id="created_on" [(ngModel)]="tutorial.created_on" required>
+
+                 <input class="mt-4" placeholder="Published" type="checkbox" name="Published" id="published" [(ngModel)]="tutorial.Published">Published
+
+                </div>
+              
+                  <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+                </div>
+              
+                <div *ngIf="submitted">
+                  <h4>You submitted successfully!</h4>
+                  <button class="btn btn-success" (onclick)="newTutorial()">Add</button>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

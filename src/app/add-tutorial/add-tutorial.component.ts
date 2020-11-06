@@ -27,4 +27,39 @@ export class AddTutorialComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  saveTutorial(): void {
+    const data = {
+      title: this.tutorial.title,
+      description: this.tutorial.description,
+      image: this.tutorial.image,
+      content: this.tutorial.content,
+      author: this.tutorial.description,
+      Published: this.tutorial.Published,
+      created_on: this.tutorial.created_on,
+    };
+
+    this.tutorialService.create(data)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  newTutorial(): void {
+    this.submitted = false;
+    this.tutorial = {
+      title: this.tutorial.title,
+      description: this.tutorial.description,
+      image: this.tutorial.image,
+      content: this.tutorial.content,
+      author: this.tutorial.description,
+      Published: this.tutorial.Published,
+      created_on: this.tutorial.created_on,
+    };
+  }
+
 }
