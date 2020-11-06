@@ -22,12 +22,19 @@
     </div>
     <div class="col-md-6">
       <h2>Tutorials List</h2>
+      <pagination-controls
+  (pageChange)="handlePageChange($event)"
+></pagination-controls>
       <ul class="list-group">
         <li
           class="list-group-item"
-          *ngFor="let tutorial of tutorials; let i = index"
+          *ngFor="let tutorial of tutorials| paginate:{
+            itemsPerPage: 3,
+            currentPage: page,
+            totalItems: tutorials.count
+          } ; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveTutorial(tutorial, i)"
+          (click)="setActiveTutorial(tutorial, i) "
         >
           {{ tutorial.title }}
         </li>

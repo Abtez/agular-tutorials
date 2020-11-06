@@ -9,6 +9,13 @@ import { Tutorials} from '../tutorials'
 })
 export class TutorialListComponent implements OnInit {
 
+  page = 1;
+
+  handlePageChange(event) {
+    this.page = event;
+  }
+
+
   tutorials: any;
   currentTutorial = null;
   currentIndex = -1;
